@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];
+          let readMessage = new WeakSet();
+          readMessage.add(messages[0]);
+          readMessage.add(messages[1]);
+          alert("read message 0" + readMessage.has(messages[0]));
+          messages.shift();
+
+          //2
+          let messages1 = [
+            {text: "Hello", from: "John"},
+            {text: "How goes?", from: "John"},
+            {text: "See you soon", from: "Alice"}
+           ];
+           let readMap = new WeakMap();
+           readMap.set(messages1[0], new Date(2017, 1, 1));
+      
+        </script>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            //1
+            let fruits = ["Apples", "Pear", "Orange"];
+            let shoppingCart = fruits;
+            shoppingCart.push("Banana");
+            alert( fruits.length ); //4
+
+            //2
+            let styles = ["jazz" , "Blues"];
+            styles.push("Rock-n-Roll");
+            styles[Math.floor((styles.length-1)/2)]= "Classics";
+            alert(styles.shift());
+            styles.unshift("Rap" , "Reggae");
+
+            //3
+            let arr = ["a", "b"];
+
+            arr.push(function() {
+                alert( this );
+            });
+
+            arr[2](); //a,b,function(){alert.this}
+
+            //4
+            function sumInput(){
+                let num = [];
+                while(true){
+                    let value = prompt("number", 0);
+                    if (value === "" || value === null || !isFinite(value)) break;
+                    num.push(+value);
+                }
+                let sum = 0;
+                for(let n of num){
+                    sum += n;
+                }
+                return sum;
+            }
+            alert(sumInput());
+
+            //5
+            function getMaxSubSum(arr){
+                let maxsum = 0;
+                let partialsum =0;
+
+                for(let item of arr){
+                    partialsum += item;
+                    maxsum = Math.max(maxsum, partialsum);
+                    if(partialsum <0 ) partialsum=0;
+                }
+                return maxsum
+            }
+            getMaxSubSum([-1, 2, 3, -9]) ;//5
+getMaxSubSum([-1, 2, 3, -9, 11]); //11
+getMaxSubSum([-2, -1, 1, 2]); //3
+getMaxSubSum([100, -9, 2, -3, 5]); //100
+getMaxSubSum([1, 2, 3]) ; //6
+
+        </script>
+    </body>
+</html>
