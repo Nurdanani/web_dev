@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 .product-container{
     display: flex;
     flex-wrap: wrap;
     gap:20px;
     justify-content: center;
+=======
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: center;
+>>>>>>> e46d3e32c406d3b9609e467e0d7a28c47fcc5c4c
 }

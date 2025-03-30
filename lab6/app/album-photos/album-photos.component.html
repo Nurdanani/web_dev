@@ -1,0 +1,14 @@
+<p>album-photos works!</p>
+
+<p *ngIf="error" class="error">{{ error }}</p>
+
+<p *ngIf="loading">Загрузка...</p>
+
+<div *ngIf="!loading && photos.length">
+  <div *ngFor="let photo of photos" class="photo">
+    <img [src]="photo.thumbnailUrl" [alt]="photo.title">
+    <p>{{ photo.title }}</p>
+  </div>
+</div>
+
+<button (click)="goBack()">Назад</button>

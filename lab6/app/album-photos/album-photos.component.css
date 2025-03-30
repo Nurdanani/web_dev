@@ -1,0 +1,20 @@
+.photo {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  

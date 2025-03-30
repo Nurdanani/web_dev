@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .a{
+            background-color: #212529;
+            color:white;
+            padding:15px;
+            font-size:18px;
+            text-align:left;
+            padding-left: 20px;
+        }
+
+        .top{
+            max-width: 500px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            font-size: 24px;
+            text-align: left;
+        }
+
+        .inputs{
+            display:flex;
+            gap:10px;
+            margin-bottom: 15px;
+           
+            border-radius:4px;
+        }
+
+        input {
+            flex: 1;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button{
+            background-color: #007bff;
+            color:white;
+            border:none;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-left: 5px;
+            border-radius: 4px;
+        }
+        
+        ul{
+            list-style-type: none;
+            padding:0;
+        }
+
+        li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding :10px;
+            border-bottom: 1px solid #ddd;
+        }
+        li input[type="checkbox"]{
+            margin-right: 400px;
+           
+        }
+
+        .completed{
+            text-decoration: line-through;
+            color:gray;
+        }
+        .delete-btn{
+            background:none;
+            border: none;
+            color:red;
+            font-size: 16px;
+            cursor:pointer;
+        }
+
+    </style>
+<body>
+    <div class="a">ToDo List</div>
+    <div class="top">
+        <h1>ToDo list</h1>
+        <div class="inputs">
+            <input type="text" id = "textinput" placeholder="New Task">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="tlist"></ul>
+    </div>
+
+    <script>
+        function addTask(){
+            let textinput = document.getElementById("textinput");
+            let taskText  = textinput.value.trim();
+            if(taskText === "") return;
+            
+            let tlist = document.getElementById("tlist");
+            let li = document.createElement("li");
+
+            let checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.addEventListener("change", function(){
+                taskTextElement.classList.toggle("completed", this.checked);
+            });
+
+            let taskTextElement = document.createElement("span");
+            taskTextElement.textContent = taskText;
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
+            deleteBtn.classList.add("delete-btn");
+            deleteBtn.addEventListener("click", function(){
+                tlist.removeChild(li);
+            });
+
+            li.appendChild(checkbox);
+            li.appendChild(taskTextElement);
+            li.appendChild(deleteBtn);
+            tlist.appendChild(li);
+            textinput.value="";
+                }
+    </script>
+</body>
+</html>

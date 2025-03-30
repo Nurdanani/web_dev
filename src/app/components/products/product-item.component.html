@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="product-card"  >
     <div class="product-images">
       <img [src]="product.images[0]" alt="{{ product.name }}" class="product-img">
@@ -18,4 +19,25 @@
       <button [routerLink] = "['./product', product.id ]">Подробная информация</button>
     </div>
   </div>
+=======
+<div class="product-card">
+    <div class="product-images">
+      <img [src]="product.images[0]" alt="{{ product.name }}" class="product-img">
+      <div class="img-m">
+        <img *ngFor="let img of product.images" [src]="img" (click)="changeImage(img)" class="mini">
+      </div>
+    </div>
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>⭐ {{ product.rating }}</p>
+    <p>Likes: {{ product.likes }}</p>
+    <a [href]="product.link" target="_blank" class="buybtn">Купить</a>
+    <div class="button">
+      <button (click)="shareWhatsApp(product.link)">WhatsApp</button>
+      <button (click)="shareTelegram(product.link)">Telegram</button>
+      <button (click)="likeProduct()">Like</button>
+      <button (click)="removeItem()">Remove</button>
+    </div>
+  </div>
+>>>>>>> e46d3e32c406d3b9609e467e0d7a28c47fcc5c4c
   

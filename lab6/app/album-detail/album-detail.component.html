@@ -1,0 +1,14 @@
+<p>album-detail works!</p>
+<p *ngIf="error" class="error">{{ error }}</p>
+
+<p *ngIf="loading">Загрузка...</p>
+
+<div *ngIf="!loading && album">
+  <p><strong>ID:</strong> {{ album.id }}</p>
+  <p><strong>Название:</strong></p>
+  <input [(ngModel)]="newTitle" />
+  <button (click)="saveChanges()">Сохранить</button>
+</div>
+
+<button (click)="goBack()">Назад</button>
+<a [routerLink]="['/albums', album?.id, 'photos']">Фотографии</a>

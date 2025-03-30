@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .categories {
   margin-bottom: 20px;
 }
@@ -15,3 +16,22 @@
   background: #f0f0f0;
   border-radius: 5px;
 }
+=======
+.categories {
+  margin-bottom: 20px;
+}
+
+.categories ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.categories li {
+  cursor: pointer;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+}
+>>>>>>> e46d3e32c406d3b9609e467e0d7a28c47fcc5c4c
