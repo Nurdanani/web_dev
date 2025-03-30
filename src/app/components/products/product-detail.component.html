@@ -1,0 +1,14 @@
+<div *ngIf="product">
+    <div class="product-images">
+        <img [src]="product.images[0]" alt="{{ product.name }}" class="product-img">
+        <div class="img-m">
+          <img *ngFor="let img of product.images" [src]="img" (click)="changeImage(img)" class="mini">
+        </div>
+      </div>
+    <h3>{{product.name}}</h3>
+    <p>{{ product.description }}</p>
+    <p>⭐ {{ product.rating }}</p>
+    <p>Likes: {{ product.likes }}</p>
+     
+    <button (click) = "backtomain">Back</button>
+</div>
