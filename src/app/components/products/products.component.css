@@ -1,0 +1,17 @@
+.categories {
+  margin-bottom: 20px;
+}
+
+.categories ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.categories li {
+  cursor: pointer;
+  padding: 5px 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+}

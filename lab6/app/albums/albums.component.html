@@ -1,0 +1,22 @@
+<h2>Список альбомов</h2>
+
+<!-- Форма добавления альбома -->
+<div>
+  <input [(ngModel)]="newAlbumTitle" placeholder="Введите название альбома" />
+  <button (click)="addAlbum()">Добавить</button>
+</div>
+
+<!-- Ошибка -->
+<p *ngIf="error" class="error">{{ error }}</p>
+
+<!-- Загрузка -->
+<p *ngIf="loading">Загрузка...</p>
+
+<!-- Список альбомов -->
+<ul *ngIf="!loading">
+  <li *ngFor="let album of albums">
+    <a [routerLink]="['/albums', album.id]">{{ album.title }}</a>
+    <button *ngIf="album.id !== undefined" (click)="deleteAlbum(album.id)">Удалить</button>
+
+  </li>
+</ul>

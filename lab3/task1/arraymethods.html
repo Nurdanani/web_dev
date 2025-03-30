@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            //1
+            function camelize(str){
+                return str
+                .split('-').map(
+                    (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+                )
+                .join('');
+            }
+
+            //2
+            function filterRange(arr1, a, b){
+                return arr1.filter(item =a> (a <= item && item<= b));
+
+            }
+            let arr1 =[ 5,3,8,1];
+            let filtered = filterRange(arr1, 1,4);
+            alert(filtered);
+            alert(arr1);
+
+            //3
+            function filterRangeInPlace(arr, a, b){
+                for(let i=0; i<arr.length; i++){
+                    let val = arr[i];
+                    if(val<a || val>b){
+                        arr.splice(i,1);
+                    i--;
+                }
+                }
+            }
+            let arr = [5, 3, 8, 1];
+
+             filterRangeInPlace(arr, 1, 4); 
+
+             alert( arr );
+
+             //4
+             let arr2 = [5, 2, 1, -10, 8];
+             arr2.sort((a,b)=> b-a);
+             alert(arr2);
+
+             //5
+             function copySorted(arr3){
+                return arr3.slice().sort();
+             }
+             let arr3 = ["HTML", "JavaScript", "CSS"];
+
+             let sorted = copySorted(arr3);
+             alert( sorted ); 
+             alert( arr );
+
+             //6
+             function Calculator() {
+                this.method = {
+                    "-": (a,b) => a-b,
+                    "+" : (a,b) => a+b
+                };
+                this.calculate = function(str){
+                    let split = str.split(' '),
+                    a = +split[0],
+                    op = split[1],
+                    b = +split[2];
+
+                    if(!this.method[op] || isNaN(a) || isNaN(b)){
+                        return NaN;
+                    }
+                    return this.method[op](a,b);
+                };
+                this.addMrthod = function(name ,func){
+                    this.method[name] = func;
+                };
+             }
+
+             //7
+             let john = { name: "John", age: 25 };
+             let pete = { name: "Pete", age: 30 };
+             let mary = { name: "Mary", age: 28 };
+
+             let users = [ john, pete, mary ];
+             let names = users.map(item => item.name);
+             alert(names);
+
+             //8
+             let john1 = { name: "John", surname: "Smith", id: 1 };
+            let pete1= { name: "Pete", surname: "Hunt", id: 2 };
+            let mary1 = { name: "Mary", surname: "Key", id: 3 };
+
+            let users1 = [ john, pete, mary ];
+
+            let usersMapped = users1.map(user => ({
+                fullName:`${user.name} ${user.surname}`,
+                id:user.id
+            }));
+
+            /*
+           usersMapped = [
+            { fullName: "John Smith", id: 1 },
+            { fullName: "Pete Hunt", id: 2 },
+            { fullName: "Mary Key", id: 3 }
+            ]
+          */
+
+            alert( usersMapped[0].id ) 
+            alert( usersMapped[0].fullName ) 
+
+            //9
+
+          function sortByAge(arr9){
+            arr9.sort((a,b) => a.age - b.age);
+          }
+
+          let john2 = { name: "John", age: 25 };
+          let pete2 = { name: "Pete", age: 30 };
+          let mary2 = { name: "Mary", age: 28 };
+
+          let arr9 = [ pete, john, mary ];
+
+          sortByAge(arr);
+
+          alert(arr[0].name); 
+          alert(arr[1].name); 
+          alert(arr[2].name); 
+
+          //10
+          function shuffle(array){
+            for(let i= array.length -1 ; i>0; i--){
+                let j= Math.floor(Math.random() * (i+1));
+                [array[i], array[j]] = [array[j] , array[i]];
+            }
+          }
+          let arr10 = [1,2,3];
+          shuffle(arr10);
+          alert(arr10);
+
+          shuffle(arr10);
+          alert(arr10);
+          shuffle(arr10);
+          alert(arr10);
+
+          //11
+          function getAverageAge(users11){
+            return users11.reduce((prev, user11) => prev+ user11.age, 0)/ user11.length;
+            let john = { name: "John", age: 25 };
+            let pete = { name: "Pete", age: 30 };
+            let mary = { name: "Mary", age: 29 };
+       
+            let arr = [ john, pete, mary ];
+
+            alert( getAverageAge(arr11) );
+
+          }
+
+          //12
+          function unique(arr){
+            let result = [];
+
+            for(let str of arr12){
+                if(!result.includes(str)){
+                    result.push(str);
+                }
+            }
+
+            return result;
+
+          }
+          let strings = ["Hare", "Krishna", "Hare", "Krishna","Krishna", "Krishna", "Hare", "Hare", ":-O"];
+          alert(unique(strings));
+
+          //13
+          function groupById(array){
+            return array.reduce((obj, value)=>{
+                obj[value.id] = value;
+                return obj;
+            }, {})
+          }
+        </script>
+    </body>
+</html>

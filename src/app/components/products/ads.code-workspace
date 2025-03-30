@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"name": "ads",
+			"path": "../../../../../Desktop/ads"
+		},
+		{
+			"name": "src",
+			"path": "../../.."
+		},
+		{
+			"name": "web",
+			"path": "../../../../../Desktop/n web/web"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"ostream": "cpp"
+		}
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": []
+	}
+}
