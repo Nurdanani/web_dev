@@ -39,19 +39,27 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      'api',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+   
+]
+CORS_ALLOW_ALL_ORIGINS = True
+ROOT_URLCONF = 'hh_back.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
 ]
 
-ROOT_URLCONF = 'hh_back.urls'
 
 TEMPLATES = [
     {
