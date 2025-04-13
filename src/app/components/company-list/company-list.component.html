@@ -1,0 +1,19 @@
+<h2 class="section-title">Companies</h2>
+<div class="company-grid">
+  <div *ngFor="let c of companies" class="company-card" (click)="showVacancies(c.id)">
+    <h3>{{ c.name }}</h3>
+    <p><strong>City:</strong> {{ c.city }}</p>
+    <p><strong>Address:</strong> {{ c.address }}</p>
+  </div>
+</div>
+
+<div *ngIf="selectedVacancies.length" class="vacancy-section">
+  <h2 class="section-title">Vacancies</h2>
+  <div class="vacancy-grid">
+    <div *ngFor="let v of selectedVacancies" class="vacancy-card">
+      <h4>{{ v.name }}</h4>
+      <p>{{ v.description }}</p>
+      <p><span class="salary">💰 {{ v.salary }} ₸</span></p>
+    </div>
+  </div>
+</div>
